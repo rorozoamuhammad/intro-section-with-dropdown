@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+:root {
+    --primary-Color: hsl(0, 0%, 98%);
+    --text: hsl(0, 0%, 41%);
+    --secondary-Color: hsl(0, 0%, 8%);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Epilogue', sans-serif;
+    background-color: var(--primary-Color);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+}
+
+/* navbar */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 1em;
+    color: var(--text);
+    font-weight: 500;
+    z-index: 999999;
+}
+
+nav .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+
+nav .logo ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    list-style: none;
+}
+
+nav .logo ul li:hover,
+nav .login p:hover {
+    color: var(--secondary-Color);
+    cursor: pointer;
+}
+
+nav .logo ul .feadrop,
+nav .logo ul .comdrop {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 25%;
+}
+
+nav .logo ul .feadrop .drop {
+    position: absolute;
+    top: 3.5em;
+    left: 5.5em;
+    background-color: var(--primary-Color);
+    box-shadow: 0 0 15px 1px var(--secondary-Color);
+    display: none;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    line-height: 0;
+    border-radius: 10px;
+    padding: .5em;
+    color: var(--text);
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+nav .logo ul .feadrop .muncul {
+    display: grid;
+}
+
+nav .logo ul .comdrop .drop {
+    position: absolute;
+    top: 3.5em;
+    left: 15em;
+    background-color: var(--primary-Color);
+    box-shadow: 0 0 15px 1px var(--secondary-Color);
+    padding: .5em;
+    border-radius: 10px;
+    text-transform: capitalize;
+    color: var(--text);
+    display: none;
+}
+
+nav .logo ul .comdrop .tampil {
+    display: block;
+}
+
+nav .logo ul .feadrop #upFea,
+nav .logo ul .comdrop #upCom {
+    display: none;
+}
+
+nav .login {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 15%;
+}
+
+nav .login button {
+    border: none;
+    background-color: transparent;
+    padding: .5em 1em;
+    border: 2px solid var(--text);
+    border-radius: 10px;
+    color: var(--text);
+}
+
+nav .login button:hover {
+    border: 2px solid var(--secondary-Color);
+    color: var(--secondary-Color);
+    cursor: pointer;
+}
+
+nav .menu {
+    display: none;
+}
+
+nav .slide {
+    display: none;
+}
+
+.full {
+    display: none;
+}
+
+/* utama */
+.utama {
+    display: grid;
+    grid-template-areas:
+        "tulisan gambar"
+    ;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5em;
+    padding: .5em;
+    width: 80%;
+}
+
+.utama article {
+    grid-area: tulisan;
+    width: 80%;
+    margin: auto;
+}
+
+.utama article h1 {
+    font-size: 4.65em;
+    color: var(--secondary-Color);
+    font-weight: 700;
+}
+
+.utama article p {
+    font-size: 1.2em;
+    color: var(--text);
+    font-weight: 500;
+    margin-top: -3em;
+}
+
+.utama article button {
+    width: 20%;
+    padding: 1em 0;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--secondary-Color);
+    color: var(--primary-Color);
+    font-weight: 700;
+    border: 2px solid var(--secondary-Color);
+    transition: 500ms;
+}
+
+.utama article button:hover {
+    cursor: pointer;
+    color: var(--secondary-Color);
+    background-color: var(--primary-Color);
+}
+
+.utama article .brands img:nth-child(1) {
+    margin-left: 0;
+}
+
+.utama article .brands img {
+    margin-top: 3em;
+    margin-left: 2em;
+}
+
+.utama .gambar {
+    grid-area: gambar;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.utama .gambar .desktop {
+    width: 100%;
+}
+
+.utama .gambar .mobile {
+    display: none;
+}
+
+@media screen and (max-width: 576px) {
+
+    /* navbar */
+    nav .menu {
+        display: block;
+        z-index: 9999999;
+    }
+
+    nav .menu #closeMenu {
+        display: none;
+    }
+
+    nav .menu #iconMenu:hover,
+    nav .menu #closeMenu:hover {
+        cursor: pointer;
+    }
+
+    /* nav desktop */
+    nav .logo ul,
+    nav .login {
+        display: none;
+    }
+
+    /* nav mobile */
+
+    .full {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: var(--secondary-Color);
+        opacity: .7;
+    }
+
+    nav .slide {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        background-color: var(--primary-Color);
+        width: 60%;
+        transform: translateX(100%);
+        color: var(--text);
+    }
+
+    nav .samping {
+        transform: translateX(0);
+    }
+
+    nav .slide .login {
+        display: block;
+        width: auto;
+        text-align: center;
+    }
+
+    nav .slide .login button {
+        width: 70%;
+        padding: 1em 0;
+        border-radius: 15px;
+    }
+
+    nav .slide ul {
+        margin-top: 4em;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: auto;
+        padding: 1em;
+        line-height: 2em;
+    }
+
+    nav .slide ul .feadrop,
+    nav .slide ul .comdrop {
+        display: grid;
+        align-items: center;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    nav .slide ul .feadrop #downFea,
+    nav .slide ul .feadrop #upFea,
+    nav .slide ul .comdrop #downCom,
+    nav .slide ul .comdrop #upCom {
+        margin-left: 1em;
+    }
+
+    nav .slide ul .feadrop #upFea,
+    nav .slide ul .comdrop #upCom {
+        display: none;
+    }
+
+    nav .slide ul li:hover {
+        color: var(--secondary-Color);
+    }
+
+    nav .slide ul .feadrop .drop {
+        line-height: 0;
+        display: none;
+        grid-template-columns: 1fr 2fr;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        padding: .5em;
+    }
+
+    nav .slide ul .feadrop .drop img {
+        width: .7em;
+    }
+
+    nav .slide ul .feadrop .drop p {
+        font-size: .8em;
+    }
+
+    nav .slide ul .feadrop .feadp {
+        display: grid;
+    }
+
+    nav .slide ul .comdrop .drop {
+        line-height: .5em;
+        display: none;
+        align-items: center;
+        width: 100%;
+        padding: .5em;
+        font-size: .8em;
+    }
+
+    nav .slide ul .comdrop .comdp {
+        display: block;
+    }
+
+    /* utama */
+    .utama {
+        grid-template-areas:
+            "gambar"
+            "tulisan"
+        ;
+        width: 100%;
+        text-align: center;
+        margin-top: 3em;
+    }
+
+    .utama .gambar {
+        grid-area: gambar;
+    }
+
+    .utama .gambar .desktop {
+        display: none;
+    }
+
+    .utama .gambar .mobile {
+        display: block;
+        width: 100vw;
+    }
+
+    .utama article {
+        grid-area: tulisan;
+        width: 90%;
+    }
+
+    .utama article h1 {
+        font-size: 2em;
+    }
+
+    .utama article p {
+        margin-top: 0;
+        font-size: .9em;
+    }
+
+    .utama article button {
+        width: 30%;
+    }
+
+    .utama article .brands {
+        margin-top: 0;
+    }
+
+    .utama article .brands img {
+        margin-top: 1.5em;
+        margin-left: .5em;
+        width: 3.5em;
+    }
+}
